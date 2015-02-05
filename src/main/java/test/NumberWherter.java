@@ -5,7 +5,8 @@ package test;
  */
 public class NumberWherter {
 
-    public void getWhert() {
+    public String getWhert() {
 
+        return null;
     }
 }

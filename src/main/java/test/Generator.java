@@ -13,7 +13,6 @@ public class Generator {
     }
 
     public String generate(){
-
-        return (Math.random()*9)+"";
+        return String.valueOf(Math.random() * 9);
     }
 }

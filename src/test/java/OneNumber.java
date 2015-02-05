@@ -1,8 +1,13 @@
+import code.CompareNumber;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import test.GameProcess;
 import test.Generator;
+import test.NumberWherter;
 import test.OneNumbers;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -14,6 +19,7 @@ import static java.lang.Integer.*;
 import static org.fest.assertions.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -67,8 +73,23 @@ public class OneNumber{
     @Test
     public void show_print_welcome_first_when_game_start(){
         PrintStream printStream = mock(PrintStream.class);
-        verify(printStream).println("123");
-
-
+        BufferedReader bufferedReader = mock(BufferedReader.class);
+        CompareNumber compareNumber = new CompareNumber();
+        NumberWherter numberWherter = new NumberWherter();
+        GameProcess gameProcess = new GameProcess(printStream,bufferedReader,compareNumber,numberWherter);
+        printStream.print("WelCome");
+        printStream.print("Plase input your answer(6):");
+        printStream.print("4A0B");
+        printStream.print("Plase input your answer(5):");
+        printStream.print("3A1B");
+        printStream.print("Plase input your answer(4):");
+        printStream.print("2A2B");
+        printStream.print("Plase input your answer(3):");
+        printStream.print("1A3B");
+        printStream.print("Plase input your answer(2):");
+        printStream.print("0A4B");
+        printStream.print("Plase input your answer(1):");
+        printStream.print("0A0B");
     }
+
 }
