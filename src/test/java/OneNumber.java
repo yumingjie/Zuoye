@@ -86,6 +86,7 @@ public class OneNumber{
         printStream.print("Plase input your answer(4):");
         printStream.print("2A2B");
         printStream.print("Plase input your answer(3):");
+
         printStream.print("1A3B");
         printStream.print("Plase input your answer(2):");
         printStream.print("0A4B");
