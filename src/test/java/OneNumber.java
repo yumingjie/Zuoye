@@ -1,7 +1,11 @@
 import org.junit.Test;
+import test.GameProcess;
 import test.Generator;
 import test.OneNumbers;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -10,6 +14,7 @@ import static java.lang.Integer.*;
 import static org.fest.assertions.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by yumingjie on 15-2-4.
@@ -44,7 +49,6 @@ public class OneNumber{
     }
 
     private void Impl() {
-
         Random r = mock(Random.class);
         given(r.nextInt(10))
                 .willReturn(1, 2, 3, 4)
@@ -58,5 +62,18 @@ public class OneNumber{
         set.add(g.generate());
 
         //System.out.println(set.size());
+    }
+
+    @Test
+    public void show_print_welcome_first_when_game_start(){
+        //PrintStream printStream = mock(PrintStream.class);
+        OutputStream outputStream = mock(OutputStream.class);
+        //new GameProcess();
+        try {
+            verify(outputStream).flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
