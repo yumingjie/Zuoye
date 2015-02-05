@@ -66,14 +66,9 @@ public class OneNumber{
 
     @Test
     public void show_print_welcome_first_when_game_start(){
-        //PrintStream printStream = mock(PrintStream.class);
-        OutputStream outputStream = mock(OutputStream.class);
-        //new GameProcess();
-        try {
-            verify(outputStream).flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        PrintStream printStream = mock(PrintStream.class);
+        verify(printStream).println("123");
+
 
     }
 }
