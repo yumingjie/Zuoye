@@ -61,6 +61,7 @@ public class OneNumber{
                 .willReturn(1, 2, 3, 4)
                 .willReturn(2, 3, 4, 5)
                 .willReturn(4, 5, 6, 7);
+        System.out.println(r.nextInt(10));
         Generator g = new Generator(r);
         Set<String> set = new HashSet<String>();
         set.add(g.generate());
@@ -70,7 +71,7 @@ public class OneNumber{
         //System.out.println(set.size());
     }
 
-    @Test
+    @Test()
     public void show_print_welcome_first_when_game_start(){
         PrintStream printStream = mock(PrintStream.class);
         BufferedReader bufferedReader = mock(BufferedReader.class);
@@ -91,5 +92,4 @@ public class OneNumber{
         printStream.print("Plase input your answer(1):");
         printStream.print("0A0B");
     }
-
 }
